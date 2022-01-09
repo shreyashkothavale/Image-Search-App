@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ImageCard from "./Components/ImageCard";
-import axios, * as others from "axios";
+import axios from "axios";
 import ImageSearch from "./Components/ImageSearch";
 function App() {
   const [images, setImages] = useState([]);
