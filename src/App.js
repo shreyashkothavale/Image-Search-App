@@ -7,7 +7,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [term, setTerm] = useState("");
 
-  const fetchData = () => {
+  useEffect(() => {
     axios
       .get(
         `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`
@@ -16,8 +16,7 @@ function App() {
         setImages(res.data.hits);
         setIsLoading(false);
       });
-  };
-  useEffect(() => fetchData(), [term]);
+  }, [term]);
   return (
     <div className="container mx-auto">
       <ImageSearch searchText={(text) => setTerm(text)} />
