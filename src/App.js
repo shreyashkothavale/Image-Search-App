@@ -30,7 +30,7 @@ function App() {
           Loading...
         </h1>
       ) : (
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 gap-2 md:grid-cols-3 gap-4 place-items-center">
           {images.map((image) => (
             <ImageCard key={image.id} image={image} />
           ))}
